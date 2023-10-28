@@ -1,6 +1,25 @@
 import string
+import sqlite3
 
-with open('new.txt', 'r') as f:
+class DBclass:
+    def __init__(self, path):
+        self.path = path
+        
+    def execute(self, query):
+        db = sqlite3.connect(self.path)
+        cur = db.cursor()
+        cur.execute(query)
+        result = [i[0] for i in cur.description], cur.fetchall()
+        db.close()
+        return result
+    
+
+conn = sqlite3.connect('players.db')
+cursor = conn.cursor()
+
+
+
+with open('cap.txt', 'r') as f:
     stopwords = f.read().splitlines()
 
 lis=[]
