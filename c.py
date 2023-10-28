@@ -39,9 +39,10 @@ with open('stopwords.txt', 'r') as f:
     stopwords = f.read().splitlines()
     
 rules = {
-    'greet': {
-        'keywords': ['#love','#instagood','#fashion ','#photooftheday','#photography ','#art','#beautiful','#nature','#picoftheday','#happy','#follow','#travel ','#cute','#style ','#instadaily ','#tbt ','#followme ','#summer I','#beauty','#fitness ','#like4like','#food','#instalike ','#photo ','#selfie ','#friends ','#music','#smile','#family ','#fun ','#girl ','#likeforlikes','#motivation','#fitness ','#gym ','#workout ','#health ','#fitnessmotivation ','#bodybuilding ','#healthy ','#yoga ','#running ','#body ','#run ','#fitnessmodel ','#gymmotivation ','#cardio ','#fitnessaddict ','#fitnessjourney ','#getfit ','#fitmom ','#workoutmotivation ','#gymrat ','#fitnesslifestyle ','#yogainspiration ','#sweat ','#strengthtraining ','#gymgirl ','#art ','#photography ','#artist ','#drawing ','#artwork ','#digitalart ','#artistsoninstagram ','#draw ','#instaart ','#artoftheday ','#contemporaryart ','#paint ','#abstractart ','#artgallery ','#artistic ','#artofinstagram ','#artcollector ','#modernart ','#tattooart ','#urbanart ','#picsart ','#artists ','#artlover ','#artdaily ','#artjournal '],
-        'response': 'Hi there! How can I help you today?'
+    'list_players_by_coach': {
+        'keywords': ['teacher', 'coach','coached','mentor'],
+        'response': 'Coach of {name} is',
+        'query': "SELECT Coach FROM playertables WHERE Lastname ='{name}'"
     }
 }
 nlp = stanza.Pipeline(lang='en', processors='tokenize,pos')

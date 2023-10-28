@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instagram Profile</title>
+</head>
+<body>
+    <h1>Instagram Profile Information</h1>
+    <form action="/" method="post">
+        <label for="instagram-username">Enter Instagram Username:</label>
+        <input type="text" id="instagram-username" name="instagram-username" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    
+    {% if username %}
+    <h2>Username: {{ username }}</h2>
+    <p>Number of posts: {{ num_posts }}</p>
+    <p>Followers: {{ num_followers }}</p>
+    <p>Followings: {{ num_followings }}</p>
+    
+    <h3>Post Captions:</h3>
+    <ul>
+        {% for caption in captions %}
+        <li>{{ caption }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    
+    {% if error %}
+    <p>{{ error }}</p>
+    {% endif %}
+</body>
+</html>
