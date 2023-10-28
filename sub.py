@@ -26,3 +26,7 @@ for keyword, value in keyword_values.items():
             flags[i]=1
     # print(f"Keyword: {keyword}, Value: {value}")
 print(flags)
+with open('user.txt','a') as f:
+    for j in range (len(flags)):
+        f.write(str(flags[j]))
+    f.write(',')
