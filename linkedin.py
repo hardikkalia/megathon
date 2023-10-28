@@ -1,20 +1,20 @@
 from bs4 import BeautifulSoup
 from selenium import webdriver
 import time
-import os
 
 
-os.environ["webdriver.chrome.driver"] = '/opt/homebrew/bin/chromedriver'
+
+PATH = 'C:\Program Files (x86)\chromedriver.exe'
 
 
 
 l=list()
 o={}
 
-target_url = "https://twitter.com/pahujakuvam"
+target_url = "https://twitter.com/scrapingdog"
 
 
-driver=webdriver.Chrome()
+driver=webdriver.Chrome(PATH)
 
 driver.get(target_url)
 time.sleep(2)
