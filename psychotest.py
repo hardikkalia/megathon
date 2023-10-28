@@ -1,5 +1,5 @@
-#extraversion (E) vs. introversion (I), sensing (S) vs. intuition (N), thinking (T) vs. feeling (F), and judging (J) vs. perceiving (P)
-
+#extraversion (E) vs. introversion (I), sensing (S) vs. intuition (N), thinking (TH) vs. feeling (F), and judging (J) vs. perceiving (P)
+#Loner(L) vs. TeamWorker(TE),Calm & Composed(C&C) vs. Anxious in Pressure Conditions(AX),
 def mbti_test():
     # Define the questions for each MBTI dimension
     questions = {
@@ -7,10 +7,13 @@ def mbti_test():
         'I': 'I prefer to spend time alone rather than socializing with others.',
         'S': 'I focus on details and practicality in decision-making.',
         'N': 'I focus on possibilities and abstract concepts in decision-making.',
-        'T': 'I rely on logic and objective analysis when making decisions.',
+        'TH': 'I rely on logic and objective analysis when making decisions.',
         'F': 'I rely on personal values and empathy when making decisions.',
         'J': 'I prefer to have a plan and stick to it.',
-        'P': 'I prefer to stay flexible and adapt to changing circumstances.'
+        'P': 'I prefer to stay flexible and adapt to changing circumstances.',
+        'L': 'Do you prefer to work alone?',
+        'TE': 'Do you prefer to work with team?',
+        'C&C': 'Are you good at handling stressful situations and remaining calm under pressure?'
     }
 
     # Initialize the user's MBTI type
@@ -36,8 +39,8 @@ def mbti_test():
     else:
         mbti_result += 'N'
 
-    if 'T' in mbti_type:
-        mbti_result += 'T'
+    if 'TH' in mbti_type:
+        mbti_result += 'TH'
     else:
         mbti_result += 'F'
 
@@ -45,6 +48,17 @@ def mbti_test():
         mbti_result += 'J'
     else:
         mbti_result += 'P'
+
+    if 'L' in mbti_type:
+        mbti_result += 'L'
+    else:
+        mbti_result += 'TE'
+    if 'C&C' in mbti_type:
+        mbti_result += 'C&C'
+    else:
+        mbti_result += 'AX'
+    
+
 
     # Display the MBTI result
     print(f"Your MBTI Personality Type: {mbti_result}")

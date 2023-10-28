@@ -24,5 +24,7 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS mytable (
                 )''')
 
 
+
+
 conn.commit()
 conn.close()
