@@ -32,6 +32,9 @@ def instagram_profile():
             num_posts = profile.mediacount
             num_followers = profile.followers
             num_followings = profile.followees
+
+            with open('user.txt','a') as f:
+                f.write(str(num_posts)+','+str(num_followings)+','+str(num_followers)+',')
             
             captions = []
             hashtags = []

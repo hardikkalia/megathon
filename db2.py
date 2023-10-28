@@ -4,6 +4,9 @@ conn = sqlite3.connect("userdatabase.db")
 cursor = conn.cursor()
 cursor.execute('''CREATE TABLE IF NOT EXISTS mytable (
                     name TEXT,
+                    insta_post int,
+                    insta_following int,
+                    insta_followers int,
                     flag1 int,
                     flag2 int,
                     flag3 int,
