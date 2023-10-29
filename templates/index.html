@@ -2,6 +2,49 @@
 <html>
 <head>
     <title>Image Choice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #000000, rgb(47, 46, 46), #000000);
+            color: #fff;
+        }
+        h1 {
+            font-size: 28px;
+            padding: 20px;
+        }
+        img {
+            max-width: 60%;
+            height: auto;
+            margin: 20px 0;
+        }
+        form {
+            margin: 20px;
+        }
+        label {
+            font-size: 18px;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            background: #eee;
+            border: none;
+        }
+        input[type="submit"] {
+            background: #ff5733;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background: #e5492c;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <h1>Choose an Option</h1>
@@ -14,6 +57,7 @@
             <option value="option3">C</option>
             <option value="option4">D</option>
         </select>
+        <br><br>
         <input type="submit" value="Submit">
     </form>
 </body>
