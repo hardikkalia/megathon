@@ -65,8 +65,11 @@ with open('cap.txt','r') as f:
         result = cursor.fetchone()
         if result is None:
             cursor.execute("INSERT INTO mytable (keyword,value) VALUES (?,?)",(word2,string))
+            conn.commit()
         else:
             cursor.execute("UPDATE mytable SET value = ? WHERE keyword = ?",(string,word2))
+
+conn.close()
 
 
 
