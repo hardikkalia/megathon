@@ -8,6 +8,4 @@ threads=user_data['data']['mediaData']['threads']
 captions=[]
 for thread in threads:
     captions.append(thread['thread_items'][0]['post']['caption']['text'])
-with open('threads_data.txt','+wt') as f:
-    for caption in captions:
-        f.write(caption)
+print(captions)
