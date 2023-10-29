@@ -7,7 +7,7 @@ with open('user.txt','r') as f:
     word = f.readline().strip().split(',')
 
 word = word[4:16]
-string = ' '
+string = ''
 if(word[0]=='1'):
     string+='E'
     string+=','
@@ -55,7 +55,6 @@ if(word[11]=='1'):
     string+=','
 
 string= string[0:len(string)-1]
-string = "'"+string+"'"
 
 with open('cap.txt','r') as f:
     l = f.readlines()

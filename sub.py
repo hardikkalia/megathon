@@ -13,17 +13,22 @@ keyword_values = {}
 
 for word in words:
     cursor.execute("SELECT keyword, value FROM mytable WHERE keyword = ?", (word,))
-    result = cursor.fetchone()
-    if result:
-        keyword, value = result
-        keyword_values[keyword] = value
+    results = cursor.fetchall()
+    for result in results:
+        if result:
+            keyword, value = result
+            keyword_values[keyword] = value
+            for a in value.split(','):
+                for i in range(len(lis)):
+        
+                    if lis[i]==a:
+                        flags[i]=1
+
+
 
 conn.close()
-for keyword, value in keyword_values.items():
-    for i in range(len(lis)):
-        # print(lis[i],value)
-        if lis[i]==value:
-            flags[i]=1
+
+    
     # print(f"Keyword: {keyword}, Value: {value}")
 print(flags)
 with open('user.txt','a') as f:
