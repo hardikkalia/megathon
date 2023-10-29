@@ -3,6 +3,8 @@ from threads_interface import ThreadsInterface
 scraper = ThreadsInterface()
 id=''
 user_id = scraper.retrieve_user_id(id)
+id=''
+user_id = scraper.retrieve_user_id(id)
 user_data = scraper.retrieve_user_threads(user_id)
 threads=user_data['data']['mediaData']['threads']
 captions=[]
