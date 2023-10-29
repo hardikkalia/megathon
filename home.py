@@ -97,7 +97,7 @@ def submit():
         assessment = "You tend to prioritize caution and safety in decision-making."
     with open('user.txt','a') as f:
         f.write(str(score))
-    subprocess.run(["python3", "db2.py"])
+    # subprocess.run(["python3", "db2.py"])
     return render_template('psyco.html')
 
 
@@ -171,7 +171,19 @@ def dummy():
                 idx=idx+2
                 # print(s)
                 return render_template(s)
-
+    with open('user.txt','r') as f:
+        words = f.readline().strip().split(',')
+        a = 0
+        for i in range(4,16):
+            words[i]=l[a]
+            a=a+1
+    word = ' '
+    for i in range(len(words)-1):
+        word=word+str(words[i])+','
+    word = word + str(words[len(words)-1])
+    with open('user.txt','w') as f:
+        f.write(word)
+    subprocess.run(["python3", "db2.py"])
     return render_template('redirect.html')
 
 
