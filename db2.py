@@ -19,14 +19,16 @@ cursor.execute('''CREATE TABLE IF NOT EXISTS mytable (
                     flag10 INT,
                     flag11 INT,
                     flag12 INT,
-                    testscore INT
+                    testscore INT,
+                    summary VARCHAR
                 )''')
 
 with open('user.txt', 'r') as f:
     file_contents = f.read().strip()
     words = file_contents.split(',')
-    if len(words) == 17:
-        cursor.execute("INSERT INTO mytable (name, insta_post, insta_following, insta_followers, flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, flag11, flag12, testscore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", words)
+    print(len(words))
+    if len(words) == 18:
+        cursor.execute("INSERT INTO mytable (name, insta_post, insta_following, insta_followers, flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, flag11, flag12, testscore, summary) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", words)
         conn.commit()
     
 conn.close()
