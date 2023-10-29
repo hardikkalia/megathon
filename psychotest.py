@@ -13,7 +13,8 @@ def mbti_test():
         'P': 'I prefer to stay flexible and adapt to changing circumstances.',
         'L': 'Do you prefer to work alone?',
         'TE': 'Do you prefer to work with team?',
-        'C&C': 'Are you good at handling stressful situations and remaining calm under pressure?'
+        'C&C': 'Are you good at handling stressful situations and remaining calm under pressure?',
+        'AX': 'Are you anxious in stressful situations?'
     }
 
     # Initialize the user's MBTI type

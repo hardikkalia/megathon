@@ -4,27 +4,29 @@ conn = sqlite3.connect("userdatabase.db")
 cursor = conn.cursor()
 cursor.execute('''CREATE TABLE IF NOT EXISTS mytable (
                     name TEXT,
-                    insta_post int,
-                    insta_following int,
-                    insta_followers int,
-                    flag1 int,
-                    flag2 int,
-                    flag3 int,
-                    flag4 int,
-                    flag5 int,
-                    flag6 int,
-                    flag7 int,
-                    flag8 int,
-                    flag9 int,
-                    flag10 int,
-                    flag11 int,
-                    flag12 int,
-                    testscore int,
-                    assess TEXT
+                    insta_post INT,
+                    insta_following INT,
+                    insta_followers INT,
+                    flag1 INT,
+                    flag2 INT,
+                    flag3 INT,
+                    flag4 INT,
+                    flag5 INT,
+                    flag6 INT,
+                    flag7 INT,
+                    flag8 INT,
+                    flag9 INT,
+                    flag10 INT,
+                    flag11 INT,
+                    flag12 INT,
+                    testscore INT
                 )''')
 
-
-
-
-conn.commit()
+with open('user.txt', 'r') as f:
+    file_contents = f.read().strip()
+    words = file_contents.split(',')
+    if len(words) == 17:
+        cursor.execute("INSERT INTO mytable (name, insta_post, insta_following, insta_followers, flag1, flag2, flag3, flag4, flag5, flag6, flag7, flag8, flag9, flag10, flag11, flag12, testscore) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", words)
+        conn.commit()
+    
 conn.close()

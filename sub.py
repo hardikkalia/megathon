@@ -29,4 +29,4 @@ print(flags)
 with open('user.txt','a') as f:
     for j in range (len(flags)):
         f.write(str(flags[j]))
-    f.write(',')
+        f.write(',')
