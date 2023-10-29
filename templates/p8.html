@@ -2,17 +2,72 @@
 <html>
 <head>
     <title>MBTI Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url("data:image/png;base64,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");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container
+        {
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 400px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>MBTI Personality Test</h1>
-    <form method="POST" action="/lol">
-        <p>I rely on logic and objective analysis when making decisions.</p>
-        <label>
-            <input type="radio" name="TH" value="1"> Agree
-            <input type="radio" name="TH" value="0"> Disagree
-        </label>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1>MBTI Personality Test</h1>
+        <form method="POST" action="/lol">
+            <p>I rely on logic and objective analysis when making decisions.</p>
+            <label>
+                <input type="radio" name="E" value="1"> Agree
+                <input type="radio" name="E" value="0"> Disagree
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

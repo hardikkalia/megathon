@@ -2,17 +2,72 @@
 <html>
 <head>
     <title>MBTI Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20211019/pngtree-future-development-of-network-technology-and-urban-planning-background-image_912390.png");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container
+        {
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 400px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>MBTI Personality Test</h1>
-    <form method="POST" action="/lol">
-        <p>I prefer to have a plan and stick to it.</p>
-        <label>
-            <input type="radio" name="J" value="1"> Agree
-            <input type="radio" name="J" value="0"> Disagree
-        </label>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="container">
+        <h1>MBTI Personality Test</h1>
+        <form method="POST" action="/lol">
+            <p>I prefer to have a plan and stick to it.</p>
+            <label>
+                <input type="radio" name="E" value="1"> Agree
+                <input type="radio" name="E" value="0"> Disagree
+            </label>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </body>
 </html>

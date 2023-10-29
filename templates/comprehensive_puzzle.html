@@ -2,29 +2,90 @@
 <html>
 <head>
     <title>Comprehensive Puzzle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url("https://tasbihdigital.com/wp-content/uploads/2022/07/Black-Aesthetic-iPhone-X-Wallpaper.jpg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 400px;
+        }
+
+        p {
+            margin: 0;
+            padding: 5px 0;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 75%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Comprehensive Puzzle!</h1>
-    <form action="/submit" method="POST">
-        <p>Scenario 1: An asteroid field blocks your path.</p>
-        <p>Option 1: Maneuver through the asteroids, risking damage to the ship. </p>
-        <p>Option 2: Wait for the path to clear, risking delays. </p>
-        <label for="response1">Choose an option (1 or 2):</label>
-        <input type="text" id="response1" name="response1" required><br>
+    <div class="container">
+        <h1>Welcome to the Comprehensive Puzzle!</h1>
+        <form action="/submit" method="POST">
+            <p>Scenario 1: An asteroid field blocks your path.</p>
+            <p>Option 1: Maneuver through the asteroids, risking damage to the ship.</p>
+            <p>Option 2: Wait for the path to clear, risking delays.</p>
+            <label for="response1">Choose an option (1 or 2):</label>
+            <input type="text" id="response1" name="response1" required>
 
-        <p>Scenario 2: Your crew faces a technical malfunction.</p>
-        <p>Option 1: Try to repair it yourself, potentially saving time.</p>
-        <p>Option 2: Delegate the task to the crew's engineer. </p>
-        <label for="response2">Choose an option (1 or 2):</label>
-        <input type="text" id="response2" name="response2" required><br>
+            <p>Scenario 2: Your crew faces a technical malfunction.</p>
+            <p>Option 1: Try to repair it yourself, potentially saving time.</p>
+            <p>Option 2: Delegate the task to the crew's engineer.</p>
+            <label for="response2">Choose an option (1 or 2):</label>
+            <input type="text" id="response2" name="response2" required>
 
-        <p>Scenario 3: You discover an unknown species on the planet's surface.</p>
-        <p>Option 1: Make contact and attempt peaceful communication. </p>
-        <p>Option 2: Observe from a distance and avoid contact. </p>
-        <label for="response3">Choose an option (1 or 2):</label>
-        <input type="text" id="response3" name="response3" required><br>
+            <p>Scenario 3: You discover an unknown species on the planet's surface.</p>
+            <p>Option 1: Make contact and attempt peaceful communication.</p>
+            <p>Option 2: Observe from a distance and avoid contact.</p>
+            <label for="response3">Choose an option (1 or 2):</label>
+            <input type="text" id="response3" name="response3" required>
 
-        <input type="submit" value="Submit">
-    </form>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>

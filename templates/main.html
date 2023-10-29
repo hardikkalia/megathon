@@ -2,15 +2,93 @@
 <html>
 <head>
     <title>Instagram Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSKoTxi9tQVEzo0Al2lpHsxRLCb3NGhalbUg&usqp=CAU");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            color: white;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"] {
+            width: 75%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        h2, h3 {
+            color: #333;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
+        p.error {
+            color: #f00;
+        }
+    </style>
 </head>
 <body>
-    <h1>Instagram Profile Information</h1>
-    <form action="/form" method="post">
-        <label for="instagram-username">Enter Instagram Username:</label>
-        <input type="text" id="instagram-username" name="instagram-username" required>
-        <br>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="container">
+        <h1>Instagram Profile Information</h1>
+        <form action="/form" method="post">
+            <label for="instagram-username">Enter Instagram Username:</label>
+            <input type="text" id="instagram-username" name="instagram-username" required>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
     
     {% if username %}
     <h2>Username: {{ username }}</h2>
@@ -27,7 +105,7 @@
     {% endif %}
     
     {% if error %}
-    <p>{{ error }}</p>
+    <p class="error">{{ error }}</p>
     {% endif %}
 </body>
 </html>
